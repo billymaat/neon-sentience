@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,17 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Cyberpunk theme colors
+				cyber: {
+					black: '#080808',
+					blue: '#00FFFF',
+					purple: '#9D00FF',
+					red: '#FF0044',
+					darkblue: '#0A1128',
+					neonblue: '#08F7FE',
+					neonpink: '#FE53BB',
+					neonyellow: '#F5D300'
 				}
 			},
 			borderRadius: {
@@ -70,25 +82,82 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'pulse-glow': {
+					'0%, 100%': { 
+						boxShadow: '0 0 15px 2px rgba(0, 255, 255, 0.5), 0 0 25px 5px rgba(0, 255, 255, 0.3)' 
 					},
-					to: {
-						height: '0'
+					'50%': { 
+						boxShadow: '0 0 25px 5px rgba(0, 255, 255, 0.7), 0 0 35px 10px rgba(0, 255, 255, 0.5)' 
 					}
+				},
+				'text-glitch': {
+					'0%, 100%': { transform: 'translate(0)' },
+					'20%': { transform: 'translate(-5px, 5px)' },
+					'40%': { transform: 'translate(-5px, -5px)' },
+					'60%': { transform: 'translate(5px, 5px)' },
+					'80%': { transform: 'translate(5px, -5px)' }
+				},
+				'glitch-skew': {
+					'0%': { transform: 'skew(0deg)' },
+					'10%': { transform: 'skew(2deg)' },
+					'20%': { transform: 'skew(-2deg)' },
+					'30%': { transform: 'skew(0deg)' },
+					'40%': { transform: 'skew(-1deg)' },
+					'50%': { transform: 'skew(1deg)' },
+					'60%': { transform: 'skew(0deg)' },
+					'70%': { transform: 'skew(2deg)' },
+					'80%': { transform: 'skew(-2deg)' },
+					'90%': { transform: 'skew(0deg)' },
+					'100%': { transform: 'skew(0deg)' }
+				},
+				'flicker': {
+					'0%, 100%': { opacity: '1' },
+					'5%': { opacity: '0.7' },
+					'10%': { opacity: '1' },
+					'15%': { opacity: '0.3' },
+					'20%': { opacity: '1' },
+					'25%': { opacity: '0.9' },
+					'30%': { opacity: '1' },
+					'35%': { opacity: '0.5' },
+					'40%': { opacity: '1' },
+					'75%': { opacity: '1' },
+					'80%': { opacity: '0.4' },
+					'85%': { opacity: '1' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'scan-line': {
+					'0%': { transform: 'translateY(0)' },
+					'100%': { transform: 'translateY(100vh)' }
+				},
+				'neural-pulse': {
+					'0%, 100%': { opacity: '0.3', transform: 'scale(1)' },
+					'50%': { opacity: '1', transform: 'scale(1.05)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'text-glitch': 'text-glitch 0.5s linear infinite',
+				'glitch-skew': 'glitch-skew 1s linear infinite',
+				'flicker': 'flicker 5s linear infinite',
+				'float': 'float 3s ease-in-out infinite',
+				'scan-line': 'scan-line 8s linear infinite',
+				'neural-pulse': 'neural-pulse 5s ease-in-out infinite'
+			},
+			backgroundImage: {
+				'cyber-grid': 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)',
+				'cyber-gradient': 'linear-gradient(to right, #080808, #0A1128, #080808)'
 			}
 		}
 	},

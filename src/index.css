@@ -1,84 +1,42 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 12 90% 55%;
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -92,10 +50,197 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border selection:bg-cyber-blue/20 selection:text-white;
+  }
+  
+  body {
+    @apply bg-cyber-black text-foreground antialiased;
+    font-family: 'Rajdhani', sans-serif;
   }
 
-  body {
-    @apply bg-background text-foreground;
+  html {
+    @apply scroll-smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+  }
+  
+  .text-glow-sm {
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+  }
+  
+  .cyber-box {
+    @apply relative border border-cyber-blue/50 bg-cyber-black/70 backdrop-blur-sm;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3), inset 0 0 10px rgba(0, 255, 255, 0.2);
+  }
+  
+  .cyber-box-red {
+    @apply relative border border-cyber-red/50 bg-cyber-black/70 backdrop-blur-sm;
+    box-shadow: 0 0 10px rgba(255, 0, 68, 0.3), inset 0 0 10px rgba(255, 0, 68, 0.2);
+  }
+  
+  .cyber-box-purple {
+    @apply relative border border-cyber-purple/50 bg-cyber-black/70 backdrop-blur-sm;
+    box-shadow: 0 0 10px rgba(157, 0, 255, 0.3), inset 0 0 10px rgba(157, 0, 255, 0.2);
+  }
+  
+  .cyber-button {
+    @apply relative overflow-hidden px-8 py-3 font-bold uppercase transition-all duration-300;
+    @apply border border-cyber-blue text-cyber-blue;
+    @apply hover:bg-cyber-blue/10 hover:text-white;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3), inset 0 0 10px rgba(0, 255, 255, 0);
+  }
+  
+  .cyber-button:hover {
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), inset 0 0 10px rgba(0, 255, 255, 0.2);
+  }
+  
+  .cyber-button::before {
+    content: '';
+    @apply absolute inset-0 -translate-x-full bg-cyber-blue/20 skew-x-12;
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .cyber-button:hover::before {
+    @apply translate-x-full;
+  }
+  
+  .cyber-button-red {
+    @apply relative overflow-hidden px-8 py-3 font-bold uppercase transition-all duration-300;
+    @apply border border-cyber-red text-cyber-red;
+    @apply hover:bg-cyber-red/10 hover:text-white;
+    box-shadow: 0 0 10px rgba(255, 0, 68, 0.3), inset 0 0 10px rgba(255, 0, 68, 0);
+  }
+  
+  .cyber-button-red:hover {
+    box-shadow: 0 0 15px rgba(255, 0, 68, 0.5), inset 0 0 10px rgba(255, 0, 68, 0.2);
+  }
+  
+  .cyber-button-red::before {
+    content: '';
+    @apply absolute inset-0 -translate-x-full bg-cyber-red/20 skew-x-12;
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .cyber-button-red:hover::before {
+    @apply translate-x-full;
+  }
+  
+  .glitch-effect {
+    position: relative;
+  }
+  
+  .glitch-effect::before,
+  .glitch-effect::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip: rect(0, 0, 0, 0);
+  }
+  
+  .glitch-effect::before {
+    left: 2px;
+    text-shadow: -1px 0 #00FFFF;
+    animation: glitch-animation 2s infinite linear alternate-reverse;
+  }
+  
+  .glitch-effect::after {
+    left: -2px;
+    text-shadow: 3px 0 #FF0044;
+    animation: glitch-animation 3s infinite linear alternate-reverse;
+  }
+  
+  @keyframes glitch-animation {
+    0% {
+      clip: rect(5px, 9999px, 5px, 0);
+    }
+    5% {
+      clip: rect(76px, 9999px, 84px, 0);
+    }
+    10% {
+      clip: rect(22px, 9999px, 96px, 0);
+    }
+    15% {
+      clip: rect(65px, 9999px, 10px, 0);
+    }
+    20% {
+      clip: rect(92px, 9999px, 76px, 0);
+    }
+    25% {
+      clip: rect(15px, 9999px, 72px, 0);
+    }
+    30% {
+      clip: rect(55px, 9999px, 49px, 0);
+    }
+    35% {
+      clip: rect(70px, 9999px, 39px, 0);
+    }
+    40% {
+      clip: rect(1px, 9999px, 55px, 0);
+    }
+    45% {
+      clip: rect(30px, 9999px, 4px, 0);
+    }
+    50% {
+      clip: rect(57px, 9999px, 15px, 0);
+    }
+    55% {
+      clip: rect(89px, 9999px, 46px, 0);
+    }
+    60% {
+      clip: rect(61px, 9999px, 26px, 0);
+    }
+    65% {
+      clip: rect(11px, 9999px, 84px, 0);
+    }
+    70% {
+      clip: rect(7px, 9999px, 99px, 0);
+    }
+    75% {
+      clip: rect(81px, 9999px, 72px, 0);
+    }
+    80% {
+      clip: rect(15px, 9999px, 13px, 0);
+    }
+    85% {
+      clip: rect(13px, 9999px, 57px, 0);
+    }
+    90% {
+      clip: rect(61px, 9999px, 15px, 0);
+    }
+    95% {
+      clip: rect(30px, 9999px, 57px, 0);
+    }
+    100% {
+      clip: rect(86px, 9999px, 73px, 0);
+    }
+  }
+  
+  .scanline {
+    @apply pointer-events-none fixed left-0 top-0 z-50 h-[2px] w-full bg-white/10;
+    animation: scan-line 8s linear infinite;
+  }
+  
+  .neural-node {
+    @apply h-3 w-3 rounded-full bg-cyber-blue;
+    box-shadow: 0 0 10px 2px rgba(0, 255, 255, 0.7);
+  }
+  
+  .neural-line {
+    @apply absolute z-0 h-px bg-gradient-to-r from-cyber-blue/5 via-cyber-blue/30 to-cyber-blue/5;
+  }
+  
+  .cyber-gradient-text {
+    @apply bg-gradient-to-r from-cyber-blue via-cyber-purple to-cyber-red bg-clip-text text-transparent;
   }
 }
